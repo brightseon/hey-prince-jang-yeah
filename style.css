@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WjWadag';
+    src: url('./assets/fonts/yjwadag.TTF');
+}
+
+@keyframes moving {
+    0% {
+        transform: translate(-50%, 300px);
+    }
+
+    100% {
+        transform: translateY(-50%, 0);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('./assets/images/background.jpeg');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.bonobono {
+    width: 300px;
+    height: 300px;
+    background-image: url('./assets/images/bonobono.png');
+    background-position: right;
+    background-size: cover;
+    animation: moving 7s forwards;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'WjWadag';
+    font-size: 4rem;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description span {
+    font-size: 3rem;
+    font-family: 'DungGeunMo';
+}
+
+.description span:nth-child(1) {
+    color: red;
+}
+
+.description span:nth-child(2) {
+    color: orange;
+}
+
+.description span:nth-child(3) {
+    color: yellow;
+}
+
+.description span:nth-child(4) {
+    color: green;
+}
+
+.description span:nth-child(5) {
+    color: blue;
+}
+
+.description span:nth-child(6) {
+    color: navy;
+}
+
+.description span:nth-child(7) {
+    color: purple;
+}
+
+.description span:nth-child(8) {
+    color: black;
+}
+
+.warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.question {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    /* top: -200px; */
+    left: 50%;
+    transform: translate(-50%, -200px);
+    color: white;
+    text-shadow: -1px 0px red, 0px 1px red, 1px 0px red, 0px -1px red;
+    font-size: 3rem;
+    background-image: url('./assets/images/speech-bubble.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: appear 4s 3s forwards;
+    opacity: 0;
+}
+
+.button {
+    all: unset;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    animation: appear 4s 3s forwards;
+    opacity: 0;
+    color: white;
+}
+
+.prev {
+    left: 0;
+    animation: none;
+    opacity: 1;
+}
+
+.next {
+    right: 0;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 2rem;
+    margin-top: 120px;
+    font-family: 'DungGeunMo';
+    background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hat {
+    width: 200px;
+    height: 200px;
+    background-image: url('./assets/images/birthday-hat.png');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: -148px;
+    right: -20px;
+    transform: rotate(15deg);
+    opacity: 0;
+    animation: appear 2s 5s forwards;
+}
+
+.cake {
+    width: 100px;
+    height: 100px;
+    background-image: url('./assets/images/cake.png');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: appear 3s 7s forwards;
+}
+
+.thanks {
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/images/thanks.jpeg');
+    background-position: 50%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
